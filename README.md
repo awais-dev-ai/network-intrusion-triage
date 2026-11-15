@@ -63,8 +63,7 @@ network-intrusion-triage/
 ├── reports/
 │   ├── figures/                # EDA, confusion matrix, ROC, and model comparison charts
 │   ├── metrics.json            # Structured experiment metrics
-│   ├── dataset_audit.md        # Schema dictionary, data quality & bias audit
-│   └── technical_report.md     # Detailed methodology, experiments & error analysis
+│   └── dataset_audit.md        # Schema dictionary, data quality & bias audit
 ├── src/
 │   ├── config.py               # YAML config loader & path resolver
 │   ├── data_loader.py          # Parquet ingestion, schema checks & stratified sampling
