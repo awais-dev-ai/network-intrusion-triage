@@ -11,8 +11,8 @@ paths:
   best_model: models/best_model.joblib
 
 sampling:
-  max_train_rows: 20000
-  max_test_rows: 10000
+  max_train_rows: null
+  max_test_rows: null
 
 schema:
   target_col: label
