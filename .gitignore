@@ -11,8 +11,7 @@ __pycache__/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Generated artifacts and processed data (regenerated via python -m src.pipeline)
-models/*.joblib
+# Generated processed data (regenerated via python -m src.pipeline)
 data/processed/
 
 # Streamlit local secrets/cache
