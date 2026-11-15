@@ -21,3 +21,15 @@ data/processed/
 .DS_Store
 Thumbs.db
 *.log
+~$*
+*.zip
+
+# Local planning, course docs, and presentation files (kept on disk, excluded from Git)
+rules.md
+assignment.md
+PLAN.md
+reports/presentation.pptx
+reports/slides_outline.md
+reports/proposal.md
+reports/project_log.md
+reports/technical_report.md

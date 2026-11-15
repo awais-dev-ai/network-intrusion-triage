@@ -12,18 +12,21 @@ A modular, reproducible Machine Learning pipeline and interactive triage interfa
 
 ## Architecture Overview
 
-```mermaid
-flowchart LR
-    A["data/raw/*.parquet"] --> B["src/data_loader.py<br/>Schema & Stratified Sampling"]
-    C["configs/config.yaml<br/>Single Source of Truth"] --> B
-    C --> D["src/preprocessing.py<br/>Leakage-Free ColumnTransformer"]
-    B --> D
-    B --> E["src/eda.py<br/>EDA Visualizations"]
-    D --> F["src/models.py<br/>LogReg · RF · HistGB"]
-    F --> G["src/evaluate.py<br/>Metrics, CM & ROC"]
-    G --> H["src/pipeline.py<br/>Authoritative Artifact Producer"]
-    H --> I["models/best_model.joblib<br/>reports/metrics.json"]
-    I --> J["app.py<br/>Streamlit SOC Triage UI"]
+```text
+configs/config.yaml (SSOT)
+   |
+   +--> src/data_loader.py --> src/eda.py --> reports/figures/*.png
+   |
+   +--> src/preprocessing.py (ColumnTransformer)
+           |
+           v
+        src/models.py (LogReg | RandomForest | HistGradientBoosting)
+           |
+           v
+        src/evaluate.py --> src/pipeline.py (Authoritative Producer)
+                               |--> reports/metrics.json
+                               |--> data/processed/*.parquet
+                               +--> models/best_model.joblib --> app.py (Streamlit UI)
 ```
 
 ### Core Engineering Principles
